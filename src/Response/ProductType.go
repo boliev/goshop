@@ -2,16 +2,21 @@ package response
 
 import "goshop/src/product"
 
-// ProductType struct
+// ProductType response
 type ProductType struct {
 	Name   string         `json:"name"`
 	Fields []ProductField `json:"fields"`
 }
 
-// ProductField struct
+// ProductField response
 type ProductField struct {
 	Name      string `json:"name"`
 	FieldType string `json:"fieldType"`
+}
+
+// ProductTypesList response
+type ProductTypesList struct {
+	Types []string `json:"types"`
 }
 
 // CreateFromDomain creates ProductType response from ProductType domain

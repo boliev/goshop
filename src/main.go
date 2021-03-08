@@ -18,5 +18,9 @@ func main() {
 		controller.CreateProductType(c)
 	})
 
+	r.GET("/product-types", func(c *gin.Context) {
+		controller.GetProductTypes(c)
+	})
+
 	r.Run(":8000")
 }

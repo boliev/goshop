@@ -66,5 +66,5 @@ func NewFieldType(name string) (FieldType, error) {
 
 // AvailableFieldTypes returns Available types for product fields
 func AvailableFieldTypes() []string {
-	return []string{"string", "int", "text", "return", "float", "file", "gallery"}
+	return []string{"string", "int", "text", "float", "file", "gallery"}
 }

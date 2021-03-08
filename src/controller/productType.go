@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateProductType Create product type action
 func CreateProductType(c *gin.Context) {
 	var json request.ProductTypeRequest
 	if err := c.ShouldBindJSON(&json); err != nil {
@@ -29,4 +30,9 @@ func CreateProductType(c *gin.Context) {
 
 	productType := product.Type{}.New(json.Name, fields)
 	c.JSON(200, response.ProductType{}.CreateFromDomain(productType))
+}
+
+// GetProductTypes get available product types
+func GetProductTypes(c *gin.Context) {
+	c.JSON(200, response.ProductTypesList{product.AvailableFieldTypes()})
 }
